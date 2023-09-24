@@ -1,14 +1,14 @@
 {
   "dependencies": {
+    "bcrypt": "^5.1.1",
     "ejs": "^3.1.9",
     "express": "^4.18.2"
+  },
+  "name": "login-with-node-js",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "devStart": "nodemon server.js"
   }
-  ,
-    "name": "login-with-node-js",
-    "version": "1.0.0",
-    "description": "",
-    "main": "index.js",
-    "scripts": {
-      "devStart": "nodemon server.js"
-    }
 }
