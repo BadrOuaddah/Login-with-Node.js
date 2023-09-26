@@ -65,6 +65,11 @@ app.post("/register", (req, res) => {
   console.log(users);
 });
 
+app.delete('/logout', (req, res) => {
+  req.logOut()
+  res.redirect('/login')
+})
+
 function checkAuthenticated(req, res, next) {
   if (req.isAuthenticated()) {
     return next()
