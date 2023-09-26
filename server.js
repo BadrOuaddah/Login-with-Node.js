@@ -31,11 +31,11 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
-app.get("/", (req, res) => {
+app.get("/", checkAuthenticated, (req, res) => {
   res.render("index.ejs", { name: req.user.name });
 });
 
-app.get("/login", (req, res) => {
+app.get("/login", checkNotAuthenticated, (req, res) => {
   res.render("login.ejs");
 });
 
@@ -65,5 +65,19 @@ app.post("/register", (req, res) => {
   console.log(users);
 });
 
+function checkAuthenticated(req, res, next) {
+  if (req.isAuthenticated()) {
+    return next()
+  }
+
+  res.redirect('/login')
+}
+
+function checkNotAuthenticated(req, res, next) {
+  if (req.isAuthenticated()) {
+    return res.redirect('/')
+  }
+  next()
+}
 
 app.listen(3000);
