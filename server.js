@@ -51,9 +51,9 @@ app.get("/register", (req, res) => {
   res.render("register.ejs");
 });
 
-app.post("/register", (req, res) => {
+app.post("/register", async (req, res) => {
   try {
-    const hashedPassword = bcrypt.hash(req.body.password, 10);
+    const hashedPassword = await bcrypt.hash(req.body.password, 10);
     users.push({
       id: Date.now().toString(),
       name: req.body.name,
@@ -68,9 +68,10 @@ app.post("/register", (req, res) => {
 });
 
 app.delete('/logout', (req, res) => {
-  req.logOut()
-  res.redirect('/login')
-})
+  req.logOut(() => {
+    res.redirect('/login');
+  });
+});
 
 function checkAuthenticated(req, res, next) {
   if (req.isAuthenticated()) {
