@@ -1,4 +1,113 @@
-<h1><%= name %></h1>
-<form action="/logout?_method=DELETE" method="POST">
-  <button type="submit">Log Out</button>
-</form>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+  background-image: url("https://images.unsplash.com/photo-1687201363580-1cd1bb33c2b5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1332&q=80");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center top;
+  overflow-x: hidden;
+}
+
+#home:hover, #about:hover, #contactUs:hover {
+  color: white;
+}
+
+@keyframes birdsFlying {
+  0% {
+    left: 100vw;
+  }
+  100% {
+    left: -200vw;
+  }
+}
+
+#birdsContainer {
+  position: absolute;
+  top: 10vw;
+  animation-name: birdsFlying;
+  animation-delay: 0s;
+  animation-duration: 30s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  z-index: -1;
+}
+
+#welcome {
+  color: white;
+  text-shadow: 2px 2px 5px black;
+  position: fixed;
+  text-align: center;
+  height: 100vh;
+  line-height: 100vh;
+  font-size: 40px;
+  font-family: "Courier New", Courier, monospace;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+
+.sunset-button {
+  align-items: center;
+  background-clip: padding-box;
+  background-color: #fa6400;
+  border: 1px solid transparent;
+  border-radius: .25rem;
+  box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: system-ui,-apple-system,system-ui,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  justify-content: center;
+  line-height: 1.25;
+  margin: 0;
+  min-height: 3rem;
+  padding: calc(.875rem - 1px) calc(1.5rem - 1px);
+  position: relative;
+  text-decoration: none;
+  transition: all 250ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+  width: auto;
+}
+
+.sunset-button:hover,
+.sunset-button:focus {
+  background-color: #fb8332;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+}
+
+.sunset-button:hover {
+  transform: translateY(-1px);
+}
+
+.sunset-button:active {
+  background-color: #c85000;
+  box-shadow: rgba(0, 0, 0, .06) 0 2px 4px;
+  transform: translateY(0);
+}
+  </style>
+  <title>Welcome</title>
+</head>
+<body>
+
+<div id="birdsContainer"><image src="https://clipart-library.com/img1/1663317.gif" height="100px" draggable="false"></div>
+<div id="welcome"><h1>Welcome! <%= name %></h1></div>
+<div>
+  <form action="/logout?_method=DELETE" method="POST">
+    <button class="sunset-button" type="submit">Log Out</button>
+  </form>
+</div>
+
+</body>
+</html>
