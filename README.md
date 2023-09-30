@@ -4,7 +4,7 @@
 
 ### Demo (Video 📹👇)
 
-![login](https://github.com/BadrOuaddah/Login-with-Node.js/assets/119801735/38b37389-7f0f-49e8-b420-d39bdd3cb86e)
+![login](https://github.com/BadrOuaddah/Login-with-Node.js/assets/119801735/6a960aff-3af4-40f1-b39e-7f69da5e2895)
 
 ### List of Features 📋
 
