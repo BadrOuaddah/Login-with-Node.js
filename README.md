@@ -9,7 +9,8 @@
 ### List of Features 📋
 
 - [x] Set up server and create index.ejs file
-- [x] Create login and register pages
+- [x] Create login and register page
+- [x] Add the password encryption (bcrypt)
 - [x] Display error message in view of login
 
 ### Built With ⚙️
