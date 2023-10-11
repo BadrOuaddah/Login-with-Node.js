@@ -60,9 +60,7 @@ app.post(
   [
     check("name").notEmpty().withMessage("Name is required"),
     check("email").isEmail().withMessage("Invalid email address"),
-    check("password")
-      .isLength({ min: 6 })
-      .withMessage("Password must be at least 6 characters")
+    check("password").not().isEmpty().withMessage("Password is required").isLength({ min: 6 }).withMessage("Password must be at least 6 characters")
   ],
   async (req, res) => {
     const errors = validationResult(req);
